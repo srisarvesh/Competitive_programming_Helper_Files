@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+
 
 public class bitmanupulation
 {
@@ -240,6 +240,7 @@ public class bitmanupulation
          return ans-1;
 
     }
+    
 
 
 
