@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 
 public class bitmanupulation
@@ -241,13 +242,44 @@ public class bitmanupulation
 
     }
     
+    static void permutate(char[] in,int i)
+    {
+        if(in[i]=='\u0000')
+        {
+            String s=new String(in);
+            System.out.println(s);
+            return;
+        }
+        for(int j=i;in[j]!='\u0000';j++)
+            {
+            //swapping 
+            char temp=in[i];
+            in[i]=in[j];
+            in[j]=temp;
+
+            //calling the function with i+1 (increasing ith value to moniter the input string each time until we reach '\u0000')
+
+            permutate(in, i+1);
+            
+            //backtracking step so when we get back to the step again we need to have the original sequence of characters
+            temp=in[i];
+            in[i]=in[j];
+            in[j]=temp;
+        
+        }
+
+
+    }
+    
 
 
 
 
     public static void main(String[] args) {
-      int[] p={2,3,5};
-      System.out.println(inclusion_exclusion_func_where_we_will_pass_a_list_of_primenumbers_to_find_NO_Nos_thar_are_divisible_by_the_primes(p,1000));
+     int n=4;
+     DONE=((1<<n)-1);
+     N_Queen_problem_using_bitmasking(0, 0, 0,0);
+     System.out.println(ans);
           
           
     }

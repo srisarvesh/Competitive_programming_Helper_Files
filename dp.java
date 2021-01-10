@@ -522,6 +522,7 @@ public class dp{
             return bsearch(mid+1, last, x, a);
         }
 
+
     }
     return -1;
     
@@ -903,12 +904,29 @@ public class dp{
         return string_to_int(s,n-1)*10+s.charAt(n-1)-'0';
     }
 
+    static int fastpow(int a,int n)
+    {
+        if(n==0)
+        {
+            return 1;
+        }
+        int anss=fastpow(a,n/2);
+        anss*=anss;
+        if(n%2==0)
+        {
+            return anss;
+        }
+        else{
+            return a*anss;
+        }
+
+    }
 
 
     public static void main(String[] args)  
     {
        
-      
+      System.out.println(fastpow(2, 4)); 
         
     }
 }   
